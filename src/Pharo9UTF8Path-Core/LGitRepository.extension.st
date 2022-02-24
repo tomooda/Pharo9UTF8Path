@@ -48,11 +48,12 @@ LGitRepository >> primRepository_open_ext: out path: path flags: flags ceiling_d
 
 { #category : #'*Pharo9UTF8Path-Core' }
 LGitRepository >> primRepository_set_head: refname log_message: log_message [
-	
+
 	^ self
-		ffiCallSafely:
-			#(int git_repository_set_head #(self , String refname , String log_message))
-		options: #()
+		  ffiCallSafely:
+			  #( int git_repository_set_head #( self , String refname , String
+			        log_message ) )
+		  options: #(  )
 ]
 
 { #category : #'*Pharo9UTF8Path-Core' }
