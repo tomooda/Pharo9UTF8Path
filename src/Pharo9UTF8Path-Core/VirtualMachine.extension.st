@@ -42,9 +42,7 @@ VirtualMachine >> getSystemAttribute: attributeID [
 	^ (self primGetSystemAttribute: attributeID) ifNotNil: [ :string | 
 		  string isAsciiString
 			  ifTrue: [ string ]
-			  ifFalse: [ 
-				  string asByteArray decodeWith:
-					  OSEnvironment current defaultEncoding ] ]
+			  ifFalse: [ string asByteArray decodeWith: 'utf-8' ] ]
 ]
 
 { #category : #'*Pharo9UTF8Path-Core' }
