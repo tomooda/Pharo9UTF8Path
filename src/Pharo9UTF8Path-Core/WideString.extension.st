@@ -3,7 +3,7 @@ Extension { #name : #WideString }
 { #category : #'*Pharo9UTF8Path-Core' }
 WideString >> ffiString [
 
-	^ (self encodeWith: 'utf-8') asString
+	^ (self encodeWith: OSEnvironment current defaultEncoding) asString
 ]
 
 { #category : #'*Pharo9UTF8Path-Core' }
